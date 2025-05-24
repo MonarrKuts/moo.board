@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+          <div class="nav-left">
+            <span class="logo">moo.board</span>
+            <img src="images/img2.png" alt="logo icon" class="logo-icon">
+          </div>
+          <div class="nav-right">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">BLOG</a> <!--gallery-->
+            <a href="#">CONTACT</a>
+          </div>
+        </div>
+      </nav>
+      
+      
+  <div class="hero">
+    <div class="overlay">
+      <h1 class="title">Impeccably Serene</h1>
+      <p>Welcome to a space where visuals breathe emotion. Each image is a whisper. Scroll slow. Feel more.  </p> 
+      <a href="#carousel" class="btn">Groove on</a>
+    </div>
+  </div>
+
+
+  <section id="carousel" class="carousel">
+  <div class="carousel-track">
+    <div class="feature2 active">
+      <div class="feature-text2">
+        <h2>Film: <em>Settlers (2021)</em></h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <a href="#" class="btn dark">LEARN MORE</a>
+      </div>
+    </div>
+    <div class="feature3">
+      <div class="feature-text3">
+        <h2>Film: <em>Dune (2021)</em></h2>
+        <p>Another description here...</p>
+        <a href="#" class="btn dark">LEARN MORE</a>
+      </div>
+    </div>
+    <div class="feature4">
+      <div class="feature-text4">
+        <h2>TV: <em>Euphoria (2019-)</em></h2>
+        <p>Another description here...</p>
+        <a href="#" class="btn dark">LEARN MORE</a>
+      </div>
+    </div>
+    <!-- Add more .feature2 blocks as needed -->
+  </div>
+
+  <button class="carousel-btn prev">&#10094;</button>
+  <button class="carousel-btn next">&#10095;</button>
+  </section>
+
+
+  <section class="feature reverse">
+    <div class="feature-text">
+      <h2>damn <em>cool.</em></h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lacus ornare, sodales tortor at, tempor nulla
+      </p>
+      <p>
+        Nunc sed faucibus ex, a viverra justo.
+      </p>
+      <a href="#" class="btn dark">LEARN MORE</a>
+    </div>
+    <div class="feature-image">
+      <img src="https://images.pexels.com/photos/1342609/pexels-photo-1342609.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+  </section>
+
+
+  <section class="feature">
+    <div class="feature-text">
+      <h2>damn <em>visionary.</em></h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lacus ornare, sodales tortor at, tempor nulla
+      </p>
+      <p>
+        Nunc sed faucibus ex, a viverra justo.
+      </p>
+      <a href="#" class="btn dark">LEARN MORE</a>
+    </div>
+    <div class="feature-image">
+      <img src="https://images.pexels.com/photos/1342609/pexels-photo-1342609.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+  </section>
+
+  <section class="feature reverse">
+    <div class="feature-text">
+      <h2>oh damn <em>damn.</em></h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lacus ornare, sodales tortor at, tempor nulla
+      </p>
+      <p>
+        Nunc sed faucibus ex, a viverra justo.
+      </p>
+      <a href="#" class="btn dark">LEARN MORE</a>
+    </div>
+    <div class="feature-image">
+      <img src="https://images.pexels.com/photos/277290/pexels-photo-277290.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="feature-text">
+      <h2>damn <em>damnn.</em></h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lacus ornare, sodales tortor at, tempor nulla
+      </p>
+      <p>
+        Nunc sed faucibus ex, a viverra justo.
+      </p>
+      <a href="#" class="btn dark">LEARN MORE</a>
+    </div>
+    <div class="feature-image">
+      <img src="https://images.pexels.com/photos/1342609/pexels-photo-1342609.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+  </section>
+
+  <section class="feature reverse">
+    <div class="feature-text">
+      <h2>damn <em>damn.</em></h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lacus ornare, sodales tortor at, tempor nulla
+      </p>
+      <p>
+        Nunc sed faucibus ex, a viverra justo.
+      </p>
+      <a href="#" class="btn dark">LEARN MORE</a>
+    </div>
+    <div class="feature-image">
+      <img src="https://images.pexels.com/photos/1342609/pexels-photo-1342609.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+  </section>  
+  
+<script>
+  
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+
+  let currentIndex = 0;
+  const slideCount = slides.length;
+
+  function goToSlide(index) {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    currentIndex = index;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    const newIndex = (currentIndex + 1) % slideCount;
+    goToSlide(newIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    const newIndex = (currentIndex - 1 + slideCount) % slideCount;
+    goToSlide(newIndex);
+  });
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    const newIndex = (currentIndex + 1) % slideCount;
+    goToSlide(newIndex);
+  }, 5000);
+</script>
+
+
+</body>
+</html>
